@@ -15,17 +15,26 @@
                 <ul class="nav navbar-nav">
                 <?php 
 
-                    $query = "SELECT * FROM categories LIMIT 3";
-                    $select_all_categories_query = mysqli_query($connection,$query);
+                $query = "SELECT * FROM categories LIMIT 3";
+                $select_all_categories_query = mysqli_query($connection,$query);
 
-                    while($row = mysqli_fetch_assoc($select_all_categories_query)) {
-                    $cat_title = $row['cat_title'];
-                    $cat_id = $row['cat_id'];
-                        
-                        echo "<li><a href='/cms/category/{$cat_id}'>{$cat_title}</a></li>";
-                    }
+                while($row = mysqli_fetch_assoc($select_all_categories_query)) {
+                $cat_title = $row['cat_title'];
+                $cat_id = $row['cat_id'];
+                    
+                    echo "<li><a href='/cms/category/{$cat_id}'>{$cat_title}</a></li>";
+                }
                 
-                ?>
+?>
+                    <!-- <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
